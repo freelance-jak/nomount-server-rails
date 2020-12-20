@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "boot"
 
 require "rails"
@@ -12,6 +14,7 @@ require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require "csv"
 
 Bundler.require(*Rails.groups)
 
