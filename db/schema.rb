@@ -16,10 +16,9 @@ ActiveRecord::Schema.define(version: 2020_12_19_093257) do
   enable_extension "plpgsql"
 
   create_table "presentations", force: :cascade do |t|
-    t.string "title"
-    t.bigint "user_id"
-    t.date "presen_date"
-    t.string "document_path"
+    t.string "title", null: false, comment: "プレゼンのタイトル"
+    t.date "presen_date", null: false, comment: "プレゼンの発表日"
+    t.string "document_path", null: false, comment: "発表資料のURL"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

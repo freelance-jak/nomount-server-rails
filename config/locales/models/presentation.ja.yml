@@ -1,0 +1,13 @@
+ja:
+  activemodel: &base
+    models:
+      presentation: プレゼンテーション
+    attributes:
+      presentation:
+        title: タイトル
+        presen_date: 発表日
+        document_path: 発表資料URL
+        created_at: 作成日
+        updated_at: 更新日
+  activerecord:
+    <<: *base
