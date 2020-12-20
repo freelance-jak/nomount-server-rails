@@ -229,5 +229,6 @@ yarn-error.log*
 .pryrc
 coverage
 !app/models/logs
+app/assets/csv/*
 # idea
 .idea

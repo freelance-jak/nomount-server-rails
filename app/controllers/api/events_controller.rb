@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::EventsController < ApplicationController
-  before_action :set_event, only: %i[show update destroy]
+  before_action :set_event, only: %i[update destroy]
 
   def index
     @events = Event.all
