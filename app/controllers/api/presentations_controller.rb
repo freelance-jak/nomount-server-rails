@@ -1,16 +1,18 @@
-class PresentationsController < ApplicationController
-  before_action :set_presentation, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class Api::PresentationsController < ApplicationController
+  before_action :set_presentation, only: %i[show update destroy]
 
   # GET /presentations
   def index
     @presentations = Presentation.all
 
-    render json: @presentations
+    render json: @presentations, each_serializer: PresentationSerializer
   end
 
   # GET /presentations/1
   def show
-    render json: @presentation
+    render json: @presentation, serializer: PresentationSerializer
   end
 
   # POST /presentations
@@ -35,18 +37,18 @@ class PresentationsController < ApplicationController
 
   # DELETE /presentations/1
   def destroy
-    binding.pry
     @presentation.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_presentation
-      @presentation = Presentation.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def presentation_params
-      params.require(:presentation).permit(:title, :presen_date, :user, :document_path)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_presentation
+    @presentation = Presentation.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def presentation_params
+    params.require(:presentation).permit(:title, :presen_date, :user, :document_path)
+  end
 end

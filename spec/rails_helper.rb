@@ -1,12 +1,14 @@
-require "spec_helper"
-ENV["RAILS_ENV"] ||= "test"
-require File.expand_path("../config/environment", __dir__)
-require "rspec/rails"
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+# frozen_string_literal: true
+
+require 'spec_helper'
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../config/environment', __dir__)
+require 'rspec/rails'
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 
 Faker::Config.locale = :ja # ダミーデータの一部日本語化
 
-Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each {|f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!

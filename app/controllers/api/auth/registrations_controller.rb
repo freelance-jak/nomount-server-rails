@@ -1,11 +1,17 @@
-class Api::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
-  private
+# frozen_string_literal: true
 
-    def sign_up_params
-      params.permit(:name, :email, :password, :password_confirmation)
-    end
+module Api
+  module Auth
+    class RegistrationsController < DeviseTokenAuth::RegistrationsController
+      private
 
-    def account_update_params
-      params.permit(:name, :email)
+      def sign_up_params
+        params.permit(:name, :email, :password, :password_confirmation)
+      end
+
+      def account_update_params
+        params.permit(:name, :email)
+      end
     end
+  end
 end
