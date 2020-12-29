@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_19_121950) do
+ActiveRecord::Schema.define(version: 2020_12_19_145439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 2020_12_19_121950) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["connpass_account"], name: "index_members_on_connpass_account", unique: true
+  end
+
+  create_table "presentations", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user"
+    t.date "presen_date"
+    t.string "document_path"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
