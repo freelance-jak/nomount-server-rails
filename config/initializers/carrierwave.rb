@@ -30,11 +30,11 @@ CarrierWave.configure do |config|
   elsif Rails.env.production? || Rails.env.staging? || (Rails.env.development? && ENV.fetch("S3_TESTING", false))
 
     config.fog_credentials = {
-        provider:              "AWS",
-        aws_access_key_id:     ENV["AWS_S3_ACCESS_KEY"],
-        aws_secret_access_key: ENV["AWS_S3_SECRET_ACCESS_KEY"],
-        region:                "ap-northeast-1",
-        path_style:            true
+      provider: "AWS",
+      aws_access_key_id: ENV["AWS_S3_ACCESS_KEY"],
+      aws_secret_access_key: ENV["AWS_S3_SECRET_ACCESS_KEY"],
+      region: "ap-northeast-1",
+      path_style: true,
     }
 
     config.fog_public = true

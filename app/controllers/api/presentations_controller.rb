@@ -42,13 +42,13 @@ class Api::PresentationsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_presentation
-    @presentation = Presentation.find(params[:id])
-  end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_presentation
+      @presentation = Presentation.find(params[:id])
+    end
 
-  # Only allow a trusted parameter "white list" through.
-  def presentation_params
-    params.require(:presentation).permit(:title, :presen_date, :user, :document_path)
-  end
+    # Only allow a trusted parameter "white list" through.
+    def presentation_params
+      params.require(:presentation).permit(:title, :presen_date, :user, :document_path)
+    end
 end

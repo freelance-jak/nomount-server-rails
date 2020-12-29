@@ -7,16 +7,16 @@ ruby "2.7.2"
 
 gem "active_model_serializers", "~> 0.10.0"
 gem "bootsnap", ">= 1.4.2", require: false
+gem "carrierwave"
 gem "devise"
 gem "devise_token_auth"
+gem "fog"
 gem "kaminari"
 gem "pg"
 gem "puma", "~> 4.1"
 gem "rack-cors"
 gem "rails", "~> 6.0.3", ">= 6.0.3.4"
 gem "slack-notifier"
-gem 'carrierwave'
-gem 'fog'
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
