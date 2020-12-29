@@ -1,36 +1,36 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe User, type: :model do
-  context '必要な情報が揃っている場合' do
+  context "必要な情報が揃っている場合" do
     let(:user) { build(:user) }
 
-    it 'ユーザー登録できる' do
+    it "ユーザー登録できる" do
       expect(user).to be_valid
     end
   end
 
-  context 'name がない場合' do
+  context "name がない場合" do
     let(:user) { build(:user, name: nil) }
 
-    it 'エラーが発生する' do
+    it "エラーが発生する" do
       expect(user).not_to be_valid
     end
   end
 
-  context 'email がない場合' do
+  context "email がない場合" do
     let(:user) { build(:user, email: nil) }
 
-    it 'エラーが発生する' do
+    it "エラーが発生する" do
       expect(user).not_to be_valid
     end
   end
 
-  context 'password がない場合' do
+  context "password がない場合" do
     let(:user) { build(:user, password: nil) }
 
-    it 'エラーが発生する' do
+    it "エラーが発生する" do
       expect(user).not_to be_valid
     end
   end
