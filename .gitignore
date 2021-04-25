@@ -232,3 +232,5 @@ coverage
 app/assets/csv/*
 # idea
 .idea
+# database.yml
+config/database.yml
