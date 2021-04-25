@@ -231,3 +231,5 @@ coverage
 !app/models/logs
 # idea
 .idea
+# database.yml
+config/database.yml
