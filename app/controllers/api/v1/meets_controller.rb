@@ -1,5 +1,4 @@
 class Api::V1::MeetsController < ApplicationController
-
   # NOTE: とりあえずのモック
   def show
     event = Event.first
@@ -11,7 +10,8 @@ class Api::V1::MeetsController < ApplicationController
           connpass_account: em.member.connpass_account,
           name: em.member.name,
         },
-        is_joining: em.status
+        message: em.message,
+        is_joining: em.status,
       }
     end
     render json: { meets: join_members }
